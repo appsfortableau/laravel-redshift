@@ -14,7 +14,7 @@ This library exists to absorb them and make it possible to handle Redshift on La
 Via Composer
 
 ``` bash
-$ composer require yuk1/laravel-redshift
+composer require yuk1/laravel-redshift
 ```
 
 ## Usage
@@ -32,7 +32,6 @@ Add the Redshift driver to `config/database.php`.
       'password' => env('AWS_REDSHIFT_PASSWORD', ''),
     ],
   ],
-]
 ```
 
 Then, write the connection information in the .env file.
@@ -53,7 +52,7 @@ Please see the [changelog](changelog.md) for more information on what has change
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 ## Contributing

@@ -1,8 +1,10 @@
 # Changelog
 
-All notable changes to `LaravelRedshift` will be documented in this file.
+## [1.0.1]
 
-## Version 1.0
+- Made compatible with Laravel 10
+- Fixed compileInsertGetId
 
-### Added
-- Everything
+## [1.0]
+
+- Initial version
