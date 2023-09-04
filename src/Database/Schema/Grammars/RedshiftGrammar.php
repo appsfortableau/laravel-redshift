@@ -133,4 +133,15 @@ class RedshiftGrammar extends PostgresGrammar
   {
     return 'char(36)';
   }
+
+  /**
+   * Compile the SQL needed to retrieve all table names.
+   *
+   * @param  string|array  $searchPath
+   * @return string
+   */
+  public function compileGetAllTables($searchPath)
+  {
+    return "select tablename from pg_catalog.pg_tables where schemaname in ('".implode("','", (array) $searchPath)."')";
+  }
 }
