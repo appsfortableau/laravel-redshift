@@ -58,6 +58,11 @@ class RedshiftGrammar extends PostgresGrammar
     return $column->useCurrent ? "$columnType default CURRENT_TIMESTAMP" : $columnType;
   }
 
+  protected function typeTimestampTz(Fluent $column)
+  {
+    return $this->typeTimestamp($column);
+  }
+
   protected function modifyIncrement(Blueprint $blueprint, Fluent $column)
   {
     if ((in_array($column->type, $this->serials) || ($column->generatedAs !== null)) && $column->autoIncrement) {
@@ -134,6 +139,10 @@ class RedshiftGrammar extends PostgresGrammar
     return 'char(36)';
   }
 
+  protected function typeBigInteger(Fluent $column)
+  {
+      return 'bigint';
+  }
   /**
    * Compile the SQL needed to retrieve all table names.
    *
