@@ -18,6 +18,6 @@ class RedshiftBuilder extends PostgresBuilder
             return call_user_func($this->resolver, $table, $callback, $prefix);
         }
 
-        return new Blueprint($table, $callback, $prefix);
+        return new Blueprint($this->connection, $table, $callback);
     }
 }

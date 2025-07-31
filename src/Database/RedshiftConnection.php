@@ -15,7 +15,7 @@ class RedshiftConnection extends PostgresConnection
 {
   protected function getDefaultQueryGrammar()
   {
-    return $this->withTablePrefix(new QueryGrammar);
+    return new QueryGrammar($this);
   }
 
   public function getSchemaBuilder()
@@ -29,7 +29,7 @@ class RedshiftConnection extends PostgresConnection
 
   protected function getDefaultSchemaGrammar()
   {
-    return $this->withTablePrefix(new SchemaGrammar);
+    return new SchemaGrammar($this);
   }
 
   public function getSchemaState(Filesystem $files = null, callable $processFactory = null)
